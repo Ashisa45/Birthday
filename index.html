@@ -9,9 +9,11 @@
     margin: 0;
     font-family: "Poppins", sans-serif;
     background: radial-gradient(circle at top, #ffb6c1, #ff69b4, #c71585);
-    overflow: hidden;
+    overflow-x: hidden; /* allow vertical scroll */
+    overflow-y: auto;
     color: white;
     text-align: center;
+    position: relative;
   }
 
   h1 {
@@ -59,6 +61,8 @@
     color: #ff3366;
     font-size: 20px;
     animation: float 6s ease-in infinite;
+    pointer-events: none; /* allows scrolling */
+    z-index: 1000;
   }
 
   @keyframes float {
@@ -74,6 +78,8 @@
     background: white;
     border-radius: 50%;
     animation: explode 1.5s ease-out infinite;
+    pointer-events: none;
+    z-index: 999;
   }
 
   @keyframes explode {
@@ -118,7 +124,7 @@ PEER  MEE TOH KEHETA HUNN CHADI BHI TUKDA HAI TUMBHARA.
     JEENA KA NAYA MAQSAD DENE K LIAA👾👾 
     APNE JINDIGI MEE AANE DENE K LIAA .💫💫🫀
     
-ㅤ         ⢀⣤⣄
+ㅤ      ⢀⣤⣄
       ⢰⣿⣿⣿⣿⡆ ⣠⣶⣿⣶⡀
       ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
        ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏
@@ -131,7 +137,6 @@ PEER  MEE TOH KEHETA HUNN CHADI BHI TUKDA HAI TUMBHARA.
   </div>
 
   <div class="slideshow-container">
-    <!-- Replace image links below with your uploaded photo links -->
     <img class="slides" src="sample1.jpg" />
     <img class="slides" src="sample2.jpg" />
     <img class="slides" src="sample3.jpg" />
@@ -151,7 +156,7 @@ PEER  MEE TOH KEHETA HUNN CHADI BHI TUKDA HAI TUMBHARA.
     slideIndex++;
     if (slideIndex > slides.length) slideIndex = 1;
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3000); // Change every 3 sec
+    setTimeout(showSlides, 3000);
   }
   showSlides();
 
@@ -180,16 +185,4 @@ PEER  MEE TOH KEHETA HUNN CHADI BHI TUKDA HAI TUMBHARA.
   setInterval(createFirework, 400);
 </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
