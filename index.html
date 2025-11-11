@@ -1,170 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Sneha 💖</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top left, #ffe6f2, #ffd6eb, #ffccf9);
-      overflow-x: hidden;
-      text-align: center;
-      color: #d63384;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Sneha 💖</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at top, #ffb6c1, #ff69b4, #c71585);
+    overflow: hidden;
+    color: white;
+    text-align: center;
+  }
 
-    h1 {
-      margin-top: 40px;
-      font-size: 2em;
-      animation: glow 2s infinite alternate;
-    }
+  h1 {
+    font-size: 2em;
+    margin-top: 1em;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
 
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ff80b3; }
-      to { text-shadow: 0 0 20px #ff4da6; }
-    }
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #ff8fab, 0 0 30px #ff69b4; }
+    to   { text-shadow: 0 0 20px #fff, 0 0 30px #ff8fab, 0 0 40px #ff1493; }
+  }
 
-    .shayari {
-      font-size: 1.1em;
-      width: 80%;
-      margin: 20px auto;
-      line-height: 1.8;
-      color: #a8005b;
-      border: 2px dashed #ff80b3;
-      border-radius: 15px;
-      padding: 15px;
-      background: rgba(255, 255, 255, 0.5);
-      animation: fadeIn 2s ease-in;
-    }
+  .shayari {
+    max-width: 90%;
+    margin: 20px auto;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    animation: fadeIn 3s ease-in;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 
-    .gallery {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
+  /* Slideshow */
+  .slideshow-container {
+    position: relative;
+    max-width: 300px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
 
-    .gallery img {
-      width: 80%;
-      max-width: 300px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      animation: fadeIn 2s ease-in-out;
-    }
+  .slides {
+    display: none;
+    width: 100%;
+  }
 
-    .buttons {
-      margin-top: 25px;
-    }
+  /* Floating hearts */
+  .heart {
+    position: fixed;
+    color: #ff3366;
+    font-size: 20px;
+    animation: float 6s ease-in infinite;
+  }
 
-    button {
-      background-color: #ff4da6;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 25px;
-      margin: 5px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
+  @keyframes float {
+    0%   { transform: translateY(100vh) scale(1); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+  }
 
-    button:hover {
-      background-color: #e60073;
-    }
+  /* Fireworks */
+  .firework {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    animation: explode 1.5s ease-out infinite;
+  }
 
-    /* Floating Hearts */
-    .heart {
-      position: fixed;
-      bottom: -10px;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      transform: rotate(45deg);
-      animation: floatHearts 6s linear infinite;
-    }
+  @keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(15); opacity: 0; }
+  }
 
-    .heart::before,
-    .heart::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      border-radius: 50%;
-    }
-
-    .heart::before { top: -10px; left: 0; }
-    .heart::after { left: -10px; top: 0; }
-
-    @keyframes floatHearts {
-      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
-      100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
-    }
-
-    @media (min-width:600px){
-      h1 { font-size: 2.5em; }
-      .shayari { font-size: 1.2em; width: 60%; }
-    }
-  </style>
+  audio { display: none; }
+</style>
 </head>
+
 <body>
-  <h1>🎉 Happy Birthday Sneha 💖</h1>
+  <h1>🎂💖 Happy Birthday Sneha 💖🎂</h1>
 
-  <div class="shayari" id="shayari"></div>
-
-  <div class="gallery">
-    <img src="https://via.placeholder.com/300x400.png?text=Sneha+1" alt="Sneha 1">
-    <img src="https://via.placeholder.com/300x400.png?text=Sneha+2" alt="Sneha 2">
-    <img src="https://via.placeholder.com/300x400.png?text=Sneha+3" alt="Sneha 3">
+  <div class="shayari">
+    🌸✨ Tulu, tum meri zindagi ka wo hissa ho jise main kabhi khona nahi chahta 💫<br>
+    💝 Tumhaari muskaan meri duniya ko roshan karti hai 💕<br>
+    🌹 Is khaas din par, dua hai ki tumhaari har khwahish poori ho ✨<br>
+    💞 Tum meri har subah ka ehsaas ho, aur har raat ka sukoon 💞<br>
+    🎈🎉 Happy Birthday once again my love 💌<br>
+    🩷 Always stay the same… meri pyaari Sneha 😘💖
   </div>
 
-  <div class="buttons">
-    <button onclick="playSong('premalo')">🎶 Play Premalo</button>
-    <button onclick="playSong('birthday')">🎂 Play Happy Birthday</button>
+  <div class="slideshow-container">
+    <!-- Replace image links below with your uploaded photo links -->
+    <img class="slides" src="https://i.ibb.co/QkMb2nL/sample1.jpg" />
+    <img class="slides" src="https://i.ibb.co/1mX9ZsR/sample2.jpg" />
+    <img class="slides" src="https://i.ibb.co/gJhmHCL/sample3.jpg" />
   </div>
 
-  <audio id="premalo" src="premalo.mp3"></audio>
-  <audio id="birthday" src="happybirthday.mp3"></audio>
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  </audio>
 
-  <script>
-    // Shayari Typewriter Effect
-    const text = "Jaise oxygen ke bina human nhi, aapke bina ham nhi, mujhe iss baat ka gam nhi, ki badal gaye zamana, meri zindagi toh sirf aap ho, kabhi aap na badal jana ❤";
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("shayari").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 50);
-      }
-    }
-    typeWriter();
+<script>
+  // Slideshow
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slides");
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change every 3 sec
+  }
+  showSlides();
 
-    // Floating Hearts Generator
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
-      document.body.appendChild(heart);
-      setTimeout(() => { heart.remove(); }, 5000);
-    }, 400);
+  // Floating hearts
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 3 + Math.random() * 3 + "s";
+    heart.innerHTML = "💖";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 500);
 
-    // Music Control
-    function playSong(id) {
-      document.getElementById("premalo").pause();
-      document.getElementById("birthday").pause();
-      const audio = document.getElementById(id);
-      audio.currentTime = 0;
-      audio.play();
-    }
-  </script>
+  // Fireworks
+  function createFirework() {
+    const f = document.createElement("div");
+    f.className = "firework";
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.top = Math.random() * 100 + "vh";
+    f.style.background = ["#ff69b4", "#ffd700", "#00ffff", "#ff4500"][Math.floor(Math.random() * 4)];
+    document.body.appendChild(f);
+    setTimeout(() => f.remove(), 1500);
+  }
+  setInterval(createFirework, 400);
+</script>
 </body>
 </html>
